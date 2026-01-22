@@ -49,9 +49,9 @@ function App() {
             </p>
 
             <div className="cards-impacto">
-              <div className="card">
+              {/*<div className="card">
                 <div className="icon-box"><img src={Lock_icon} alt="" /></div>{" "}
-                {/* Ícone Cadeado Aberto/Acesso */}
+                
                 <h3>R$ 30,00</h3>
                 <p>
                   Abrem as portas para o <strong>primeiro contato</strong> com a
@@ -60,14 +60,14 @@ function App() {
               </div>
 
               <div className="card">
-                <div className="icon-box"><img src={Mala} alt="" /></div> {/* Ícone Maleta/Trabalho */}
+                <div className="icon-box"><img src={Mala} alt="" /></div> 
                 <h3>R$ 50,00</h3>
                 <p>
                   Preparam um jovem talento para o{" "}
                   <strong>mercado de trabalho</strong>.
                 </p>
               </div>
-
+                      */}
               <div className="card">
                 <div className="icon-box"><img src={Hands} alt="" /></div> {/* Ícone Globo/Mundo */}
                 <h3>Qualquer valor</h3>
