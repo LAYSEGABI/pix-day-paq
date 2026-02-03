@@ -8,15 +8,20 @@ import Hands from "./assets/img/hands.svg";
 
 function App() {
   const [showPix, setShowPix] = useState(false);
+  const [copied, setCopied] = useState(false); // Novo estado para o feedback
 
   const pixCode =
     "00020126580014BR.GOV.BCB.PIX013643.213.521/0001-305204000053039865802BR5925PROTOTIPANDO A QUEBRADA6012FLORIANOPOLIS62070503***63041D3D";
 
   const handleCopyPix = () => {
     navigator.clipboard.writeText(pixCode);
-    alert("Código PIX copiado!");
-  };
+    setCopied(true); // Muda o texto para "COPIADO!"
 
+    // Volta ao texto original após 3 segundos
+    setTimeout(() => {
+      setCopied(false);
+    }, 3000);
+  };
   return (
     <div className="landing-container">
       <div className="hero-background-wrapper">
@@ -31,50 +36,55 @@ function App() {
               <a href="#impacto">Impacto</a>
               <a href="#impacto">Depoimentos</a>
             </nav>
-
-            <a href="#doacao" className="btn-apoie">
-              APOIE O PAQ
-            </a>
-
           </div>
         </header>
 
         {/* CAMPANHA */}
         <section className="sobre-campanha" id="sobre">
           <div className="container-sobre-campanha">
-            <h2 className="titulo-destaque">PIX DAY PAQ: <br /> <span>O Futuro Não Pode Esperar.</span></h2>
+            <h2 className="titulo-destaque">
+              PIX DAY do PAQ: <br />{" "}
+              <span>Um dia pra unir forças e manter sonhos vivos.</span>
+            </h2>
             <p className="texto-intro">
-              O PAQ preparou 24 horas de solidariedade intensa para manter
-              nossas portas abertas e transformar vidas.
+              Sua doação ajuda a garantir o essencial para que jovens sigam
+              aprendendo, criando e ampliando seus caminhos com educação,
+              tecnologia e inovação.
             </p>
 
-            <div className="cards-impacto">
-              {/*<div className="card">
-                <div className="icon-box"><img src={Lock_icon} alt="" /></div>{" "}
-                
-                <h3>R$ 30,00</h3>
-                <p>
-                  Abrem as portas para o <strong>primeiro contato</strong> com a
-                  tecnologia.
-                </p>
-              </div>
+            {/* DOAÇÃO */}
+            <div id="doacao" className="donation-div">
+              <div className="donation-box">
+                {!showPix ? (
+                  <>
+                    <h3>Faça Parte</h3>
+                    <button
+                      onClick={() => setShowPix(true)}
+                      className="btn-apoie-campanha"
+                    >
+                      Apoie o PAQ
+                    </button>
+                  </>
+                ) : (
+                  <div className="pix-display">
+                    <img
+                      src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(pixCode)}`}
+                      alt="QR Code PIX"
+                      className="qr-code-img"
+                    />
 
-              <div className="card">
-                <div className="icon-box"><img src={Mala} alt="" /></div> 
-                <h3>R$ 50,00</h3>
-                <p>
-                  Preparam um jovem talento para o{" "}
-                  <strong>mercado de trabalho</strong>.
-                </p>
-              </div>
-                      */}
-              <div className="card">
-                <div className="icon-box"><img src={Hands} alt="" /></div> {/* Ícone Globo/Mundo */}
-                <h3>Qualquer valor</h3>
-                <p>
-                  Transforma um futuro através do{" "}
-                  <strong>código e da educação</strong>.
-                </p>
+                    <div className="pix-key-container">
+                      <p className="pix-key-text">{pixCode}</p>
+                    </div>
+
+                    <button
+                      onClick={handleCopyPix}
+                      className={`btn-apoie ${copied ? "success" : ""}`}
+                    >
+                      {copied ? "COPIADO!" : "COPIAR CHAVE PIX"}
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -82,34 +92,45 @@ function App() {
               Sua doação é a continuidade do nosso trabalho.
             </div>
 
-            <a href="#doacao"><img className="arrow" src={Arrow} alt="" /></a>
+            <a href="#doacao">
+              <img className="arrow" src={Arrow} alt="" />
+            </a>
           </div>
         </section>
       </div>
 
       {/* DOAÇÃO */}
-      <section id="doacao" className="donation-section">
+      <div id="doacao" className="donation-div">
         <div className="donation-box">
           {!showPix ? (
             <>
               <h3>Faça Parte</h3>
               <button onClick={() => setShowPix(true)} className="btn-apoie">
-                Liberar PIX
+                Apoie o PAQ
               </button>
             </>
           ) : (
-            <>
+            <div className="pix-display">
               <img
-                src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${pixCode}`}
-                alt="PIX"
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(pixCode)}`}
+                alt="QR Code PIX"
+                className="qr-code-img"
               />
-              <button onClick={handleCopyPix} className="btn-apoie">
-                Copiar código
+
+              <div className="pix-key-container">
+                <p className="pix-key-text">{pixCode}</p>
+              </div>
+
+              <button
+                onClick={handleCopyPix}
+                className={`btn-apoie ${copied ? "success" : ""}`}
+              >
+                {copied ? "COPIADO!" : "COPIAR CHAVE PIX"}
               </button>
-            </>
+            </div>
           )}
         </div>
-      </section>
+      </div>
 
       <footer className="footer">PAQ. Prototipando a Quebrada © 2024</footer>
     </div>

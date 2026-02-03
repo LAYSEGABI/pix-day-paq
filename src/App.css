@@ -7,8 +7,8 @@
 }
 
 :root {
-  --cor-destaque: #0b7fad;
-  --secondary-color: #091e3a;
+  --cor-destaque: #0e9fff;
+  --secondary-color: #1157b3;
   --acent-color: #0dbaff;
   --background-color: #ffffff;
   --text-color: #333333;
@@ -32,14 +32,14 @@ a {
   position: relative;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(4, 8, 14, 0.822), rgba(1, 14, 24, 0.658)),
-    url("assets/img/back.jpg");
+  background: linear-gradient(rgba(4, 8, 14, 0.918), rgba(1, 14, 24, 0.76)),
+    url("assets/img/back.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   overflow-x: hidden;
-  max-height: 800px;
+  max-height: 900px;
 }
 
 header {
@@ -66,60 +66,10 @@ header {
       }
     }
 
-    .btn-apoie {
-      position: relative;
-      /* Necessário para o efeito funcionar */
-      padding: 10px 3rem;
-      background-color: var(--cor-destaque);
-      /* Ou var(--paq-verde) */
-      color: white;
-      border-radius: 25px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      overflow: hidden;
-      /* IMPORTANTE: Impede que a luz saia do botão */
-      transition: all 0.6s ease;
-      z-index: 1;
-
-      animation: flutuar 2s ease-in-out infinite;
-    }
-
-    /* O Feixe de Luz */
-    .btn-apoie::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      /* Começa escondido na esquerda */
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg,
-          transparent,
-          rgba(255, 255, 255, 0.4),
-          transparent);
-      transition: none;
-      /* Sem transição na volta */
-    }
-
-    .btn-apoie:hover {
-      background-color: var(--secondary-color);
-      box-shadow: 0 0 15px var(--cor-destaque);
-      /* Glow externo */
-      animation-play-state: paused;
-    }
-
-    .btn-apoie:hover::before {
-      left: 100%;
-      /* Vai para a direita */
-      transition: 0.5s;
-      /* Velocidade do feixe */
-    }
 
     .paq-nav {
       display: flex;
       gap: 30px;
-      margin-right: -100px;
 
       a {
         font-weight: 600;
@@ -166,6 +116,7 @@ header {
       }
     }
 
+
     .texto-intro {
       font-size: 1.2rem;
       line-height: 1.6;
@@ -173,50 +124,7 @@ header {
       margin: 0 auto;
     }
 
-    .cards-impacto {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
 
-      .card {
-        background: rgba(5, 34, 66, 0.253);
-        border-radius: 10px;
-        padding: 20px;
-        width: 400px;
-        box-shadow: 0 4px 6px rgba(1, 4, 15, 0.719);
-        transition: transform 0.3s, box-shadow 0.3s;
-        backdrop-filter: blur(3px);
-        margin-bottom: 15px;
-
-     
-        &:nth-child(2) {
-          margin-top: -20px;
-        }
-
-        img {
-          width: 30px;
-          height: 40px;
-          border-color: white;
-          color: white;
-        }
-
-        h3 {
-          margin-bottom: 10px;
-          font-size: 2rem;
-          color: var(--acent-color);
-        }
-
-        p {
-          font-size: 1rem;
-          line-height: 1.4;
-        }
-      }
-
-      .img {
-        width: 50px;
-      }
-    }
 
     .arrow {
       margin-top: 40px;
@@ -225,6 +133,109 @@ header {
     }
   }
 }
+
+.btn-apoie {
+  background-color: #06488d;
+  /* Azul padrão */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: .5s;
+}
+
+.btn-apoie:hover {
+  background-color: #0478ad;
+  transform: scale(1.08);
+}
+
+.pix-key-container {
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 15px 0;
+  width: 100%;
+  max-width: 300px;
+  /* Ajuste conforme seu layout */
+}
+
+.pix-key-text {
+  font-size: 12px;
+  word-break: break-all;
+  /* Isso faz o código longo quebrar linhas */
+  color: #141414;
+  margin: 0;
+}
+
+.btn-apoie.success {
+  background-color: #20923b;
+  /* Verde para indicar sucesso */
+  color: white;
+}
+
+
+.btn-apoie-campanha {
+  position: relative;
+  padding: 1rem 3.5rem;
+  background-color: var(--cor-destaque);
+  color: white;
+  border-radius: 25px;
+  margin: 2rem 0;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  z-index: 1;
+
+  animation: flutuar 2s ease-in-out infinite;
+}
+
+.btn-apoie-campanha::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  /* Começa escondido na esquerda */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
+  transition: none;
+  /* Sem transição na volta */
+}
+
+.btn-apoie-campanha:hover {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 15px var(--cor-destaque);
+  /* Glow externo */
+  animation-play-state: paused;
+}
+
+.btn-apoie-campanha:hover::before {
+  left: 100%;
+  /* Vai para a direita */
+  transition: 0.5s;
+  /* Velocidade do feixe */
+}
+
+.pix-display {
+  background-color: #00b7ff;
+  border-radius: 10px;
+  margin: 1rem 0;
+  padding: 20px;
+
+  &>img {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+  }
+}
+
 
 @media (max-width: 768px) {
 
@@ -262,10 +273,12 @@ header {
 }
 
 @media (max-width: 1000px) {
-  .hero-background-wrapper{  max-height: 1500px;}
+  .hero-background-wrapper {
+    max-height: 1500px;
+  }
 
 
-.sobre-campanha {
+  .sobre-campanha {
     .container-sobre-campanha {
       .titulo-destaque {
         font-size: 2rem;
