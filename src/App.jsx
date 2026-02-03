@@ -4,7 +4,6 @@ import LogoPaq from "./assets/img/logo_paq.png";
 import Arrow from "./assets/img/arrow.svg";
 import confetti from "canvas-confetti";
 
-
 function App() {
   const [showPix, setShowPix] = useState(false);
   const [copied, setCopied] = useState(false); // Novo estado para o feedback
@@ -20,13 +19,19 @@ function App() {
       particleCount: 150,
       spread: 70,
       origin: { y: 0.6 },
-      colors: ['#00ff00', '#0000ff', '#ffffff'] // Você pode usar as cores do PAQ aqui
+      colors: ["#00ff00", "#0000ff", "#ffffff"],
     });
     // Volta ao texto original após 3 segundos
     setTimeout(() => {
       setCopied(false);
     }, 3000);
   };
+
+  // Valores da meta (você pode alterar o currentAmount manualmente por enquanto)
+  const goalAmount = 10000;
+  const currentAmount = 634;
+  const percentage = Math.floor((currentAmount / goalAmount) * 100);
+
   return (
     <div className="landing-container">
       <div className="hero-background-wrapper">
@@ -104,38 +109,53 @@ function App() {
         </section>
       </div>
 
-      {/* DOAÇÃO */}
-      <div id="doacao" className="donation-div">
-        <div className="donation-box">
-          {!showPix ? (
-            <>
-              <h3>Faça Parte</h3>
-              <button onClick={() => setShowPix(true)} className="btn-apoie">
-                Apoie o PAQ
-              </button>
-            </>
-          ) : (
-            <div className="pix-display">
-              <img
-                src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(pixCode)}`}
-                alt="QR Code PIX"
-                className="qr-code-img"
-              />
+      {/* BLOCO 2 — O QUE É O PIX DAY */}
+      <section className="sobre-pix-day" id="sobre-pix">
+        <div className="container-pix-day">
+          <div className="content-box">
+            <h2 className="titulo-secao">O que é o PIX DAY?</h2>
+            <div className="texto-informativo">
+              <p>
+                O <strong>PIX DAY</strong> é uma mobilização do{" "}
+                <strong>Prototipando a Quebrada</strong> para garantir a
+                continuidade do projeto e a entrada da próxima turma de jovens.
+              </p>
+              <p>
+                Em um único dia, convidamos nossa rede a contribuir com o que
+                puder, de forma simples, rápida e transparente.
+              </p>
+              <p className="frase-efeito">
+                Cada PIX soma. <br />
+                Cada gesto importa.
+              </p>
+            </div>
 
-              <div className="pix-key-container">
-                <p className="pix-key-text">{pixCode}</p>
+            <div className="meta-container">
+              <div className="meta-header">
+                <span className="meta-title">META DO DIA</span>
+                <div className="meta-values">
+                  <span className="current-val">
+                    R$ {currentAmount.toLocaleString("pt-BR")}
+                  </span>
+                  <span className="goal-val">
+                    / R$ {goalAmount.toLocaleString("pt-BR")}
+                  </span>
+                </div>
               </div>
 
-              <button
-                onClick={handleCopyPix}
-                className={`btn-apoie ${copied ? "success" : ""}`}
-              >
-                {copied ? "COPIADO!" : "COPIAR CHAVE PIX"}
-              </button>
+              <div className="progress-bar-bg">
+                <div
+                  className="progress-bar-fill"
+                  style={{ width: `${percentage}%` }}
+                >
+                  <span className="percentage-label">{percentage}%</span>
+                </div>
+              </div>
+
             </div>
-          )}
+          </div>
         </div>
-      </div>
+      </section>
 
       <footer className="footer">PAQ. Prototipando a Quebrada © 2024</footer>
     </div>
