@@ -2,9 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import LogoPaq from "./assets/img/logo_paq.png";
 import Arrow from "./assets/img/arrow.svg";
-import Lock_icon from "./assets/img/lock.svg";
-import Mala from "./assets/img/mala.svg";
-import Hands from "./assets/img/hands.svg";
+import confetti from "canvas-confetti";
+
 
 function App() {
   const [showPix, setShowPix] = useState(false);
@@ -17,6 +16,12 @@ function App() {
     navigator.clipboard.writeText(pixCode);
     setCopied(true); // Muda o texto para "COPIADO!"
 
+    confetti({
+      particleCount: 150,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#00ff00', '#0000ff', '#ffffff'] // Você pode usar as cores do PAQ aqui
+    });
     // Volta ao texto original após 3 segundos
     setTimeout(() => {
       setCopied(false);

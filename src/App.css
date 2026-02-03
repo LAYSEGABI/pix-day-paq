@@ -241,8 +241,13 @@ header {
 
   header {
     .paq-header-container {
+
+      justify-content: center;
+      padding-bottom: 0;
+
       .paq-nav {
         display: none;
+
       }
     }
 
