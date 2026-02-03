@@ -331,6 +331,423 @@ header {
   border: 1px solid #fff;
 }
 
+.por-que-doar {
+  padding: 80px 20px;
+  background-color: #000; /* Fundo total black */
+  color: #fff;
+  text-align: center;
+}
+
+.razoes-frases {
+  margin-bottom: 60px;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.razoes-frases p {
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.subtitulo-garantias {
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+  color: var(--acent-color);
+}
+
+/* Grid de Cards */
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card-item {
+  background: #111; /* Cinza bem escuro para o card */
+  border: 1px solid #333; /* Borda sutil */
+  padding: 30px 20px;
+  border-radius: 16px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-item:hover {
+  transform: translateY(-5px);
+  border-color: #219ebc; /* Brilho azul ao passar o mouse */
+  background: #161616;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.card-item p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.impacto-real {
+  padding: 4rem;
+  background-color: #fff;
+  color: #000;
+}
+
+.titulo-impacto {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 900;
+  gap: 15px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.quadrado-azul {
+  width: 25px;
+  height: 25px;
+  background-color: #219ebc;
+  display: inline-block;
+}
+
+.impacto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.impacto-card {
+  border: 3px solid #000; /* Borda grossa preta da imagem */
+  padding: 20px;
+  text-align: left;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.impacto-numero {
+  font-size: 2.5rem;
+  color: #219ebc;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1;
+}
+
+.impacto-subtitulo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.impacto-descricao {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.depoimentos {
+  padding: 4rem;
+  background-color: #fff;
+}
+
+.titulo-depoimentos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.detalhe-preto {
+  width: 8px;
+  height: 35px;
+  background-color: #072370;
+  display: inline-block;
+}
+
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.depoimento-card {
+  background-color: #f4f7f9; /* Cinza azulado bem claro */
+  padding: 40px;
+  border-radius: 10px;
+  border-left: 5px solid #219ebc; /* Barra lateral azul da imagem */
+  position: relative;
+}
+
+.depoimento-texto {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #000;
+  min-height: 80px;
+}
+
+.autor-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.autor-avatar {
+  border-radius: 200px;
+  width: 50px;
+  height: 50px;
+  background-color: #0c113f;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.autor-detalhes {
+  display: flex;
+  flex-direction: column;
+}
+
+.autor-detalhes strong {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.autor-detalhes span {
+  font-size: 0.9rem;
+  color: #219ebc;
+}
+
+.chamada-final {
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #fff 0%, #f4f7f9 100%);
+  text-align: center;
+}
+
+.final-content-box {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.titulo-final {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.texto-final p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.destaque-final {
+  font-size: 1.4rem !important;
+  margin-top: 25px;
+  color: #000;
+}
+
+.cta-container-final {
+  margin: 40px 0;
+}
+
+.btn-final-doacao {
+  background-color: #219ebc;
+  color: #fff;
+  border: none;
+  padding: 25px 40px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  border-radius: 50px; /* Botão arredondado para destacar dos cards */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 10px 20px rgba(33, 158, 188, 0.3);
+}
+
+.btn-final-doacao:hover {
+  transform: scale(1.05);
+  background-color: #1a7a91;
+  box-shadow: 0 15px 30px rgba(33, 158, 188, 0.4);
+}
+
+.mini-pix-shortcut {
+  margin-top: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.paq-footer-final {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 0 20px 0;
+  border-top: 1px solid #333;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand {
+  max-width: 300px;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1); /* Deixa a logo branca caso seja escura */
+}
+
+.footer-obrigado {
+  font-size: 1.1rem;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-column h4 {
+  color: #219ebc;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.footer-column a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #219ebc;
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-bottom small {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-links {
+    gap: 30px;
+    flex-direction: column;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+}
+
+/* Ajuste Mobile */
+@media (max-width: 768px) {
+  .titulo-final {
+    font-size: 1.8rem;
+  }
+  
+  .btn-final-doacao {
+    padding: 20px;
+    font-size: 1rem;
+    width: 100%;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 850px) {
+  .depoimentos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .depoimento-card {
+    padding: 30px 20px;
+  }
+}
+
+/* Responsividade Mobile */
+@media (max-width: 900px) {
+  .impacto-grid {
+    grid-template-columns: 1fr; /* Um card por linha */
+    gap: 20px;
+  }
+
+  .impacto-numero {
+    font-size: 3.5rem;
+  }
+}
+
+/* Ajuste Mobile */
+@media (max-width: 768px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr; /* Um card por linha no celular */
+    gap: 15px;
+  }
+  
+  .titulo-secao-pq {
+    font-size: 1.6rem;
+  }
+  
+  .card-item {
+    padding: 20px;
+    flex-direction: row; /* No mobile, ícone do lado do texto fica melhor */
+    justify-content: flex-start;
+    text-align: left;
+  }
+  
+  .card-icon {
+    margin-bottom: 0;
+    margin-right: 20px;
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
 
   header {

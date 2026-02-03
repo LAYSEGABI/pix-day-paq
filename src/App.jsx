@@ -151,13 +151,200 @@ function App() {
                   <span className="percentage-label">{percentage}%</span>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </section>
 
-      <footer className="footer">PAQ. Prototipando a Quebrada © 2024</footer>
+      {/* BLOCO 3 — POR QUE DOAR AGORA */}
+      <section className="por-que-doar" id="impacto">
+        <div className="container">
+          <h2 className="titulo-secao-pq">
+            Por que esse PIX é importante agora?
+          </h2>
+
+          <div className="razoes-frases">
+            <p>Porque o projeto precisa seguir funcionando.</p>
+            <p>Porque novos jovens estão chegando.</p>
+            <p>Porque educação também precisa de estrutura.</p>
+          </div>
+
+          <div className="garantias-grid">
+            <h3 className="subtitulo-garantias">
+              Essa arrecadação ajuda a garantir:
+            </h3>
+
+            <div className="cards-wrapper">
+              <div className="card-item">
+                <span className="card-icon">💻</span>
+                <p>Equipamentos funcionando</p>
+              </div>
+
+              <div className="card-item">
+                <span className="card-icon">🍎</span>
+                <p>Alimentação na unidade</p>
+              </div>
+
+              <div className="card-item">
+                <span className="card-icon">🚌</span>
+                <p>Transporte para os jovens</p>
+              </div>
+
+              <div className="card-item">
+                <span className="card-icon">🚀</span>
+                <p>Infraestrutura para a turma 2026.1</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BLOCO 4 — O IMPACTO REAL */}
+      <section className="impacto-real" id="impacto-stats">
+        <div className="container">
+          <h2 className="titulo-impacto">
+            <span className="quadrado-azul"></span> O IMPACTO REAL
+          </h2>
+
+          <div className="impacto-grid">
+            <div className="impacto-card">
+              <h3 className="impacto-numero">+500</h3>
+              <h4 className="impacto-subtitulo">JOVENS IMPACTADOS</h4>
+              <p className="impacto-descricao">
+                Pessoas reais com novas perspectivas através dos programas de
+                Imersão e Aceleração.
+              </p>
+            </div>
+
+            <div className="impacto-card">
+              <h3 className="impacto-numero">50%</h3>
+              <h4 className="impacto-subtitulo">EMPREGABILIDADE</h4>
+              <p className="impacto-descricao">
+                Dos nossos alunos já estão atuando dentro de empresas de
+                tecnologia.
+              </p>
+            </div>
+
+            <div className="impacto-card">
+              <h3 className="impacto-numero">780k</h3>
+              <h4 className="impacto-subtitulo">REAIS INJETADOS</h4>
+              <p className="impacto-descricao">
+                Dinheiro que volta pra quebrada através dos salários dos jovens
+                formados.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BLOCO 5 — A VOZ DA COMUNIDADE */}
+      <section className="depoimentos" id="depoimentos">
+        <div className="container">
+          <h2 className="titulo-depoimentos">
+            <span className="detalhe-preto"></span> A VOZ DA COMUNIDADE
+          </h2>
+
+          <div className="depoimentos-grid">
+            <div className="depoimento-card">
+              <p className="depoimento-texto">
+                "PAQ é força, resiliência, aprendizado... É onde erramos,
+                acertamos e seguimos juntos. PAQ é sinônimo de família."
+              </p>
+              <div className="autor-info">
+                <div className="autor-avatar">I</div>
+                <div className="autor-detalhes">
+                  <strong>IGOR ROHRIG</strong>
+                  <span>Educando</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="depoimento-card">
+              <p className="depoimento-texto">
+                "Fico o dia inteiro pensando na hora de chegar na unidade. O PAQ
+                está sendo uma experiência incrível."
+              </p>
+              <div className="autor-info">
+                <div className="autor-avatar">A</div>
+                <div className="autor-detalhes">
+                  <strong>ANDRÉ MORAES</strong>
+                  <span>Imersão</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BLOCO 6 — CHAMADA FINAL */}
+      <section className="chamada-final">
+        <div className="container">
+          <div className="final-content-box">
+            <h2 className="titulo-final">
+              Vamos juntos manter essa transformação em movimento?
+            </h2>
+
+            <div className="texto-final">
+              <p>
+                Se você acredita que a transformação social começa na base, esse
+                convite é pra você.
+              </p>
+              <p className="destaque-final">
+                Qualquer valor faz diferença. <br />{" "}
+                <strong>O importante é fazer junto.</strong>
+              </p>
+            </div>
+
+            <div className="cta-container-final">
+              <button
+                className="btn-final-doacao"
+                onClick={() => {
+                  document
+                    .getElementById("doacao")
+                    .scrollIntoView({ behavior: "smooth" });
+                  if (!showPix) setShowPix(true);
+                }}
+              >
+                💙 Doe para seguirmos movendo a transformação
+              </button>
+            </div>
+
+            {/* Atalho do PIX opcional aqui se quiser repetir o código no fim */}
+            <div className="mini-pix-shortcut">
+              <p>Chave CNPJ: 43.213.521/0001-30</p>
+            </div>
+          </div>
+        </div>
+      </section>
+<footer className="paq-footer-final">
+  <div className="container footer-content">
+    <div className="footer-brand">
+      <img src={LogoPaq} alt="Logo PAQ" className="footer-logo" />
+      <p className="footer-obrigado">Obrigado por caminhar com o PAQ.</p>
+    </div>
+
+    <div className="footer-links">
+      <div className="footer-column">
+        <h4>Navegação</h4>
+        <a href="#sobre-pix">O que é</a>
+        <a href="#impacto-stats">Impacto</a>
+        <a href="#depoimentos">Depoimentos</a>
+      </div>
+      <div className="footer-column">
+        <h4>Redes Sociais</h4>
+        <a href="https://instagram.com/seu_perfil" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://linkedin.com/company/seu_perfil" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <div className="footer-bottom">
+    <div className="container">
+      <p>💙 Juntos, seguimos movendo a transformação.</p>
+      <small>PAQ. Prototipando a Quebrada © 2024</small>
+    </div>
+  </div>
+</footer>
     </div>
   );
 }
