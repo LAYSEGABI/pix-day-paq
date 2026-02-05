@@ -134,6 +134,24 @@ header {
   }
 }
 
+.qr-code-img {
+  width: 250px;
+
+}
+
+.btn-apoie-campanha {
+  background-color: #06488d;
+  /* Azul padrão */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: bold;
+  transition: .5s;
+}
+
 .btn-apoie {
   background-color: #06488d;
   /* Azul padrão */
@@ -142,9 +160,11 @@ header {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.3rem;
+  font-weight: bold;
   transition: .5s;
 }
+
 
 .btn-apoie:hover {
   background-color: #0478ad;
@@ -237,40 +257,81 @@ header {
 }
 
 .sobre-pix-day {
-  padding: 80px 20px;
+  padding: 3rem;
   background-color: #ffffff;
-  /* Ou uma cor que contraste com o hero */
   display: flex;
   justify-content: center;
 }
 
 .container-pix-day {
-  max-width: 800px;
-  text-align: center;
+  max-width: 1100px; /* Aumentei para seguir o padrão do grid de impacto */
+  width: 100%;
 }
 
+/* Título com o quadradinho azul ao lado */
 .titulo-secao {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 40px;
   text-transform: uppercase;
+  color: #081a29;
+  text-align: left;
+}
+
+/* Reutilizando o detalhe azul da imagem de impacto */
+.titulo-secao::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-color: #219ebc;
+  display: inline-block;
+}
+
+/* Estilo do Card igual ao de Impacto */
+.content-box {
+  text-align: left;
+  background-color: #fff;
 }
 
 .texto-informativo p {
-  font-size: 1.2rem;
+
+  font-size: 1.1rem;
   line-height: 1.6;
-  color: #555;
+  color: #000;
   margin-bottom: 20px;
 }
 
-.frase-efeito {
-  font-weight: bold;
-  font-size: 1.5rem !important;
-  color: #00ff00;
-  /* Use a cor principal do PAQ aqui */
-  margin-top: 30px;
+.texto-informativo strong {
+  color: #219ebc;
+  font-weight: 800;
 }
 
+.frase-efeito {
+
+  font-weight: 900;
+  font-size: 1.4rem !important;
+  color: #219ebc !important;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 768px) {
+  .titulo-secao {
+    font-size: 1.6rem;
+  }
+  
+  .content-box {
+    padding: 25px;
+  }
+
+  .frase-efeito {
+    font-size: 1.2rem !important;
+  }
+}
 /*Medidor da meta*/
 .meta-container {
   background: #00171f;
@@ -331,74 +392,123 @@ header {
   border: 1px solid #fff;
 }
 
+/* Seção Geral */
 .por-que-doar {
-  padding: 80px 20px;
-  background-color: #000; /* Fundo total black */
+  padding: 3rem ;
+  background-color: #081a29; 
   color: #fff;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+ 
+}
+
+/* Título com o quadrado azul lateral (usando sua classe subtitulo-garantias ou criando o efeito no título da seção) */
+.por-que-doar h2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Inserindo o quadradinho azul das imagens sem mudar o HTML */
+.por-que-doar h2::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-color: #219ebc;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.container-por-que-doar {
+  max-width: 1100px;
+  width: 100%;
 }
 
 .razoes-frases {
-  margin-bottom: 60px;
-  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
   color: #ccc;
+  text-align: left;
 }
 
 .razoes-frases p {
   margin-bottom: 10px;
-  font-style: italic;
+  font-style: normal; /* Removido o itálico para seguir o padrão das imagens */
 }
 
 .subtitulo-garantias {
-  margin-bottom: 40px;
-  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
   color: var(--acent-color);
+  text-align: left;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
-/* Grid de Cards */
+/* Grid de Cards - Estilo Brutalista */
 .cards-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .card-item {
-  background: #111; /* Cinza bem escuro para o card */
-  border: 1px solid #333; /* Borda sutil */
-  padding: 30px 20px;
-  border-radius: 16px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  background: #081a29; 
+  border: 3px solid #fff; /* Borda grossa branca sobre fundo preto */
+  padding: 30px;
+  border-radius: 0; /* Removido o arredondado para estilo brutalista */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+/* Efeito de "Salto" no Hover */
 .card-item:hover {
-  transform: translateY(-5px);
-  border-color: #219ebc; /* Brilho azul ao passar o mouse */
-  background: #161616;
+  transform: translate(-5px, -5px);
+  border-color: #219ebc;
+  background: #122f47;
+  box-shadow: 8px 8px 0px #219ebc; /* Sombra sólida azul */
 }
 
 .card-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+  font-size: 3rem;
+  margin-bottom: 20px;
   display: block;
 }
 
 .card-item p {
-  font-size: 1.1rem;
-  font-weight: 500;
-  line-height: 1.4;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
   margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 768px) {
+  .card-item {
+    padding: 20px;
+  }
+  
+  .por-que-doar h2 {
+    font-size: 1.5rem;
+  }
 }
 
 .impacto-real {
-  padding: 4rem;
+  padding: 3rem;
   background-color: #fff;
   color: #000;
+  display: flex;
+  justify-content: center;
 }
 
 .titulo-impacto {
@@ -441,6 +551,11 @@ header {
   line-height: 1;
 }
 
+.container-impacto {
+  max-width: 1100px;
+  width: 100%;
+}
+
 .impacto-subtitulo {
   font-size: 1.2rem;
   font-weight: 800;
@@ -455,8 +570,10 @@ header {
 }
 
 .depoimentos {
-  padding: 4rem;
+  padding: 3rem;
   background-color: #fff;
+  display: flex;
+  justify-content: center;
 }
 
 .titulo-depoimentos {
@@ -490,10 +607,15 @@ header {
   position: relative;
 }
 
+.container-depoimentos {
+  max-width: 1100px;
+  width: 100%;
+}
+
 .depoimento-texto {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #000;
+  color: #081a29;
   min-height: 80px;
 }
 
@@ -533,7 +655,7 @@ header {
 }
 
 .chamada-final {
-  padding: 100px 20px;
+  padding: 3rem;
   background: linear-gradient(180deg, #fff 0%, #f4f7f9 100%);
   text-align: center;
 }
@@ -548,20 +670,20 @@ header {
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: 30px;
-  color: #000;
+  color: #081a29;
   text-transform: uppercase;
 }
 
 .texto-final p {
   font-size: 1.2rem;
-  color: #444;
+  color: #444444;
   margin-bottom: 15px;
 }
 
 .destaque-final {
   font-size: 1.4rem !important;
   margin-top: 25px;
-  color: #000;
+  color: #081a29;
 }
 
 .cta-container-final {
@@ -596,10 +718,13 @@ header {
 }
 
 .paq-footer-final {
-  background-color: #000;
+  background-color: #081a29;
   color: #fff;
-  padding: 60px 0 20px 0;
+  padding: 3rem;
   border-top: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-content {
@@ -609,6 +734,8 @@ header {
   flex-wrap: wrap;
   gap: 40px;
   margin-bottom: 40px;
+  max-width: 1100px;
+  width: 100%;
 }
 
 .footer-brand {
@@ -618,7 +745,6 @@ header {
 .footer-logo {
   height: 40px;
   margin-bottom: 20px;
-  filter: brightness(0) invert(1); /* Deixa a logo branca caso seja escura */
 }
 
 .footer-obrigado {
@@ -684,6 +810,10 @@ header {
 
   .footer-brand {
     max-width: 100%;
+  }
+
+  .sobre-pix-day {
+    padding: 2rem 1rem;
   }
 }
 

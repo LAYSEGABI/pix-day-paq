@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import LogoPaq from "./assets/img/logo_paq.png";
 import Arrow from "./assets/img/arrow.svg";
+import QRcode from "./assets/img/QRcode.png";
 import confetti from "canvas-confetti";
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
   const [copied, setCopied] = useState(false); // Novo estado para o feedback
 
   const pixCode =
-    "00020126580014BR.GOV.BCB.PIX013643.213.521/0001-305204000053039865802BR5925PROTOTIPANDO A QUEBRADA6012FLORIANOPOLIS62070503***63041D3D";
+    "00020126360014br.gov.bcb.pix0114432135210001305204000053039865802BR5925ASSOCIACAO PROTOTIPANDO A6007PALHOCA62290525K9HRT1PM6ZD1CXVAHMI2QEWW06304A00D";
 
   const handleCopyPix = () => {
     navigator.clipboard.writeText(pixCode);
@@ -29,7 +30,7 @@ function App() {
 
   // Valores da meta (você pode alterar o currentAmount manualmente por enquanto)
   const goalAmount = 10000;
-  const currentAmount = 634;
+  const currentAmount = 0;
   const percentage = Math.floor((currentAmount / goalAmount) * 100);
 
   return (
@@ -42,9 +43,8 @@ function App() {
               <img src={LogoPaq} alt="Logo PAQ" />
             </div>
             <nav className="paq-nav">
-              <a href="#sobre">Sobre Nós</a>
               <a href="#impacto">Impacto</a>
-              <a href="#impacto">Depoimentos</a>
+              <a href="#depoimentos">Depoimentos</a>
             </nav>
           </div>
         </header>
@@ -78,7 +78,7 @@ function App() {
                 ) : (
                   <div className="pix-display">
                     <img
-                      src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(pixCode)}`}
+                      src={QRcode}
                       alt="QR Code PIX"
                       className="qr-code-img"
                     />
@@ -110,7 +110,7 @@ function App() {
       </div>
 
       {/* BLOCO 2 — O QUE É O PIX DAY */}
-      <section className="sobre-pix-day" id="sobre-pix">
+      <section className="sobre-pix-day" id="doacao">
         <div className="container-pix-day">
           <div className="content-box">
             <h2 className="titulo-secao">O que é o PIX DAY?</h2>
@@ -157,8 +157,8 @@ function App() {
       </section>
 
       {/* BLOCO 3 — POR QUE DOAR AGORA */}
-      <section className="por-que-doar" id="impacto">
-        <div className="container">
+      <section className="por-que-doar" id="doar-agora">
+        <div className="container-por-que-doar">
           <h2 className="titulo-secao-pq">
             Por que esse PIX é importante agora?
           </h2>
@@ -200,8 +200,8 @@ function App() {
       </section>
 
       {/* BLOCO 4 — O IMPACTO REAL */}
-      <section className="impacto-real" id="impacto-stats">
-        <div className="container">
+      <section className="impacto-real" id="impacto">
+        <div className="container-impacto">
           <h2 className="titulo-impacto">
             <span className="quadrado-azul"></span> O IMPACTO REAL
           </h2>
@@ -220,7 +220,7 @@ function App() {
               <h3 className="impacto-numero">50%</h3>
               <h4 className="impacto-subtitulo">EMPREGABILIDADE</h4>
               <p className="impacto-descricao">
-                Dos nossos alunos já estão atuando dentro de empresas de
+                Dos nossos edudandes já estão atuando dentro de empresas de
                 tecnologia.
               </p>
             </div>
@@ -239,7 +239,7 @@ function App() {
 
       {/* BLOCO 5 — A VOZ DA COMUNIDADE */}
       <section className="depoimentos" id="depoimentos">
-        <div className="container">
+        <div className="container-depoimentos">
           <h2 className="titulo-depoimentos">
             <span className="detalhe-preto"></span> A VOZ DA COMUNIDADE
           </h2>
@@ -308,43 +308,52 @@ function App() {
                 💙 Doe para seguirmos movendo a transformação
               </button>
             </div>
-
-            {/* Atalho do PIX opcional aqui se quiser repetir o código no fim */}
-            <div className="mini-pix-shortcut">
-              <p>Chave CNPJ: 43.213.521/0001-30</p>
-            </div>
           </div>
         </div>
       </section>
-<footer className="paq-footer-final">
-  <div className="container footer-content">
-    <div className="footer-brand">
-      <img src={LogoPaq} alt="Logo PAQ" className="footer-logo" />
-      <p className="footer-obrigado">Obrigado por caminhar com o PAQ.</p>
-    </div>
 
-    <div className="footer-links">
-      <div className="footer-column">
-        <h4>Navegação</h4>
-        <a href="#sobre-pix">O que é</a>
-        <a href="#impacto-stats">Impacto</a>
-        <a href="#depoimentos">Depoimentos</a>
-      </div>
-      <div className="footer-column">
-        <h4>Redes Sociais</h4>
-        <a href="https://instagram.com/seu_perfil" target="_blank" rel="noreferrer">Instagram</a>
-        <a href="https://linkedin.com/company/seu_perfil" target="_blank" rel="noreferrer">LinkedIn</a>
-      </div>
-    </div>
-  </div>
 
-  <div className="footer-bottom">
-    <div className="container">
-      <p>💙 Juntos, seguimos movendo a transformação.</p>
-      <small>PAQ. Prototipando a Quebrada © 2024</small>
-    </div>
-  </div>
-</footer>
+      <footer className="paq-footer-final">
+        <div className="container footer-content">
+          <div className="footer-brand">
+            <img src={LogoPaq} alt="Logo PAQ" className="footer-logo" />
+            <p className="footer-obrigado">Obrigado por caminhar com o PAQ.</p>
+          </div>
+
+          <div className="footer-links">
+            <div className="footer-column">
+              <h4>Navegação</h4>
+              <a href="#doacao">Doe</a>
+              <a href="#impacto">Impacto</a>
+              <a href="#depoimentos">Depoimentos</a>
+            </div>
+            <div className="footer-column">
+              <h4>Redes Sociais</h4>
+              <a
+                href="https://www.instagram.com/prototipandoaquebrada/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.linkedin.com/company/prototipando-a-quebrada/mycompany/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <div className="container">
+            <p>💙 Juntos, seguimos movendo a transformação.</p>
+            <small>PAQ. Prototipando a Quebrada © 2026</small>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
