@@ -30,11 +30,7 @@ function App() {
 
   // Valores da meta (você pode alterar o currentAmount manualmente por enquanto)
   const goalAmount = 10000;
-<<<<<<< HEAD
   const currentAmount = 7135;
-=======
-  const currentAmount = 7135;
->>>>>>> 85d13bd2d9ac67550a4e4bb3f86b26a2412033c3
   const percentage = Math.floor((currentAmount / goalAmount) * 100);
 
   return (
