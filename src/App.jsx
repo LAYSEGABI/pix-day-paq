@@ -7,14 +7,14 @@ import confetti from "canvas-confetti";
 
 function App() {
   const [showPix, setShowPix] = useState(false);
-  const [copied, setCopied] = useState(false); // Novo estado para o feedback
+  const [copied, setCopied] = useState(false);
 
   const pixCode =
     "00020126360014br.gov.bcb.pix0114432135210001305204000053039865802BR5925ASSOCIACAO PROTOTIPANDO A6007PALHOCA62290525K9HRT1PM6ZD1CXVAHMI2QEWW06304A00D";
 
   const handleCopyPix = () => {
     navigator.clipboard.writeText(pixCode);
-    setCopied(true); // Muda o texto para "COPIADO!"
+    setCopied(true);
 
     confetti({
       particleCount: 150,
@@ -22,20 +22,11 @@ function App() {
       origin: { y: 0.6 },
       colors: ["#00ff00", "#0000ff", "#ffffff"],
     });
-    // Volta ao texto original após 3 segundos
+
     setTimeout(() => {
       setCopied(false);
     }, 3000);
   };
-
-  // Valores da meta (você pode alterar o currentAmount manualmente por enquanto)
-  const goalAmount = 10000;
-<<<<<<< HEAD
-  const currentAmount = 6050;
-=======
-  const currentAmount = 5000;
->>>>>>> 85d13bd2d9ac67550a4e4bb3f86b26a2412033c3
-  const percentage = Math.floor((currentAmount / goalAmount) * 100);
 
   return (
     <div className="landing-container">
@@ -53,155 +44,115 @@ function App() {
           </div>
         </header>
 
-        {/* CAMPANHA */}
+        {/* CAMPANHA - AGORA FOCO EM APOIO CONTÍNUO */}
         <section className="sobre-campanha" id="sobre">
           <div className="container-sobre-campanha">
             <h2 className="titulo-destaque">
-              PIX DAY do PAQ: <br />{" "}
-              <span>Um dia pra unir forças e manter sonhos vivos.</span>
+              Apoie o PAQ: <br />{" "}
+              <span>Transforme realidades através da tecnologia.</span>
             </h2>
             <p className="texto-intro">
-              Sua doação ajuda a garantir o essencial para que jovens sigam
-              aprendendo, criando e ampliando seus caminhos com educação,
-              tecnologia e inovação.
+              Sua doação garante que jovens das periferias sigam aprendendo,
+              criando e construindo futuros através da educação e inovação.
             </p>
 
-            {/* DOAÇÃO */}
+            {/* DOAÇÃO DIRETA (QR CODE SEMPRE VISÍVEL) */}
             <div id="doacao" className="donation-div">
               <div className="donation-box">
-                {!showPix ? (
-                  <>
-                    <h3>Faça Parte</h3>
-                    <button
-                      onClick={() => setShowPix(true)}
-                      className="btn-apoie-campanha"
-                    >
-                      Apoie o PAQ
-                    </button>
-                  </>
-                ) : (
-                  <div className="pix-display">
-                    <img
-                      src={QRcode}
-                      alt="QR Code PIX"
-                      className="qr-code-img"
-                    />
+                <div className="pix-display">
+                  <img src={QRcode} alt="QR Code PIX" className="qr-code-img" />
 
-                    <div className="pix-key-container">
-                      <p className="pix-key-text">{pixCode}</p>
-                    </div>
-
-                    <button
-                      onClick={handleCopyPix}
-                      className={`btn-apoie ${copied ? "success" : ""}`}
-                    >
-                      {copied ? "COPIADO!" : "COPIAR CHAVE PIX"}
-                    </button>
+                  <div className="pix-key-container">
+                    <p className="pix-key-text">{pixCode}</p>
                   </div>
-                )}
+
+                  <button
+                    onClick={handleCopyPix}
+                    className={`btn-apoie ${copied ? "success" : ""}`}
+                  >
+                    {copied ? "COPIADO!" : "COPIAR CHAVE PIX"}
+                  </button>
+                </div>
               </div>
             </div>
 
             <div className="paq-footer-text">
-              Sua doação é a continuidade do nosso trabalho.
+              Cada contribuição fortalece a nossa caminhada.
             </div>
 
-            <a href="#doacao">
-              <img className="arrow" src={Arrow} alt="" />
+            <a href="#impacto">
+              <img className="arrow" src={Arrow} alt="Ver mais" />
             </a>
           </div>
         </section>
       </div>
 
-      {/* BLOCO 2 — O QUE É O PIX DAY */}
-      <section className="sobre-pix-day" id="doacao">
-        <div className="container-pix-day">
-          <div className="content-box">
-            <h2 className="titulo-secao">O que é o PIX DAY?</h2>
-            <div className="texto-informativo">
-              <p>
-                O <strong>PIX DAY</strong> é uma mobilização do{" "}
-                <strong>Prototipando a Quebrada</strong> para garantir a
-                continuidade do projeto e a entrada da próxima turma de jovens.
-              </p>
-              <p>
-                Em um único dia, convidamos nossa rede a contribuir com o que
-                puder, de forma simples, rápida e transparente.
-              </p>
-              <p className="frase-efeito">
-                Cada PIX soma. <br />
-                Cada gesto importa.
-              </p>
-            </div>
+      {/* BLOCO 2 — POR QUE APOIAR O PAQ? */}
+<section className="sobre-pix-day" id="sobre-apoio">
+  <div className="container-pix-day">
+    <div className="content-box">
+      <h2 className="titulo-secao">Por que apoiar o PAQ?</h2>
+      <div className="texto-informativo">
+        <p>
+          O <strong>Prototipando a Quebrada</strong> é um ecossistema de educação que prepara 
+          jovens de comunidades para o mercado de tecnologia. Sua doação é o que permite 
+          manter nossa infraestrutura e oferecer formação gratuita de qualidade.
+        </p>
+        <p>
+          Ao contribuir via PIX, você garante que tenhamos recursos diretos para 
+          investir no que é urgente: alimentação, transporte e equipamentos para nossos educandos.
+        </p>
+        <p className="frase-efeito">
+          Cada doação impulsiona uma carreira. <br />
+          Cada gesto constrói o futuro da quebrada.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div className="meta-container">
-              <div className="meta-header">
-                <span className="meta-title">META DO DIA</span>
-                <div className="meta-values">
-                  <span className="current-val">
-                    R$ {currentAmount.toLocaleString("pt-BR")}
-                  </span>
-                  <span className="goal-val">
-                    / R$ {goalAmount.toLocaleString("pt-BR")}
-                  </span>
-                </div>
-              </div>
+      {/* BLOCO 3 — O IMPACTO DO SEU INVESTIMENTO */}
+<section className="por-que-doar" id="investimento">
+  <div className="container-por-que-doar">
+    <h2 className="titulo-secao-pq">
+      Para onde vai o seu investimento?
+    </h2>
 
-              <div className="progress-bar-bg">
-                <div
-                  className="progress-bar-fill"
-                  style={{ width: `${percentage}%` }}
-                >
-                  <span className="percentage-label">{percentage}%</span>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="razoes-frases">
+      <p>Para manter nossa sede e laboratórios em pleno funcionamento.</p>
+      <p>Para abrir portas para as novas turmas que chegam a cada semestre.</p>
+      <p>Para garantir que a educação tecnológica seja acessível e de qualidade.</p>
+    </div>
+
+    <div className="garantias-grid">
+      <h3 className="subtitulo-garantias">
+        Sua doação ajuda a manter:
+      </h3>
+
+      <div className="cards-wrapper">
+        <div className="card-item">
+          <span className="card-icon">💻</span>
+          <p>Equipamentos e Softwares</p>
         </div>
-      </section>
 
-      {/* BLOCO 3 — POR QUE DOAR AGORA */}
-      <section className="por-que-doar" id="doar-agora">
-        <div className="container-por-que-doar">
-          <h2 className="titulo-secao-pq">
-            Por que esse PIX é importante agora?
-          </h2>
-
-          <div className="razoes-frases">
-            <p>Porque o projeto precisa seguir funcionando.</p>
-            <p>Porque novos jovens estão chegando.</p>
-            <p>Porque educação também precisa de estrutura.</p>
-          </div>
-
-          <div className="garantias-grid">
-            <h3 className="subtitulo-garantias">
-              Essa arrecadação ajuda a garantir:
-            </h3>
-
-            <div className="cards-wrapper">
-              <div className="card-item">
-                <span className="card-icon">💻</span>
-                <p>Equipamentos funcionando</p>
-              </div>
-
-              <div className="card-item">
-                <span className="card-icon">🍎</span>
-                <p>Alimentação na unidade</p>
-              </div>
-
-              <div className="card-item">
-                <span className="card-icon">🚌</span>
-                <p>Transporte para os jovens</p>
-              </div>
-
-              <div className="card-item">
-                <span className="card-icon">🚀</span>
-                <p>Infraestrutura para a turma 2026.1</p>
-              </div>
-            </div>
-          </div>
+        <div className="card-item">
+          <span className="card-icon">🍎</span>
+          <p>Alimentação dos Educandos</p>
         </div>
-      </section>
+
+        <div className="card-item">
+          <span className="card-icon">🚌</span>
+          <p>Auxílio Transporte</p>
+        </div>
+
+        <div className="card-item">
+          <span className="card-icon">🚀</span>
+          <p>Infraestrutura e Projetos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* BLOCO 4 — O IMPACTO REAL */}
       <section className="impacto-real" id="impacto">
@@ -315,7 +266,6 @@ function App() {
           </div>
         </div>
       </section>
-
 
       <footer className="paq-footer-final">
         <div className="container footer-content">
