@@ -48,12 +48,11 @@ function App() {
         <section className="sobre-campanha" id="sobre">
           <div className="container-sobre-campanha">
             <h2 className="titulo-destaque">
-              Apoie o PAQ: <br />{" "}
-              <span>Transforme realidades através da tecnologia.</span>
+             💙 PAQPIX: <br />{" "}
+              <span>Um gesto rápido. Um impacto que fica.</span>
             </h2>
             <p className="texto-intro">
-              Sua doação garante que jovens das periferias sigam aprendendo,
-              criando e construindo futuros através da educação e inovação.
+             Com um envio simples, você fortalece experiências de aprendizagem, conexões e caminhos para o futuro de quem está construindo sua história agora.
             </p>
 
             {/* DOAÇÃO DIRETA (QR CODE SEMPRE VISÍVEL) */}
