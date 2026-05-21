@@ -39,7 +39,7 @@ a {
   background-size: cover;
   background-attachment: fixed;
   overflow-x: hidden;
-  max-height: 1000px;
+  max-height: 00px;
 }
 
 header {
@@ -335,7 +335,7 @@ header {
 /*Medidor da meta*/
 .meta-container {
   background: #00171f;
-  padding: 15px;
+  padding: 35px;
   color: white;
   border-radius: 15px;
   margin-top: 20px;
@@ -349,7 +349,7 @@ header {
 }
 
 .meta-title {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 

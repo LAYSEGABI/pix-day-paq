@@ -52,7 +52,8 @@ function App() {
               <span>Um gesto rápido. Um impacto que fica.</span>
             </h2>
             <p className="texto-intro">
-             Com um envio simples, você fortalece experiências de aprendizagem, conexões e caminhos para o futuro de quem está construindo sua história agora.
+              Sua doação garante que jovens das periferias sigam aprendendo,
+              criando e construindo futuros através da educação e inovação.
             </p>
 
             {/* DOAÇÃO DIRETA (QR CODE SEMPRE VISÍVEL) */}
